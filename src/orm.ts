@@ -2,7 +2,7 @@ import { Sequelize, Model, DataTypes } from "sequelize";
 
 const db = new Sequelize(
     process.env.DB_NAME,
-    process.env.DB_USER,
+    process.env.DB_USER || 'postgres',
     process.env.DB_PASSWORD, {
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT),
@@ -13,7 +13,7 @@ const db = new Sequelize(
 export class Event extends Model {};
 Event.init(
     {
-        id: DataTypes.STRING,
+        id: { type: DataTypes.STRING, primaryKey: true, unique: true } ,
         name: DataTypes.STRING,
         creator: DataTypes.STRING,
         start_date: DataTypes.DATE,
@@ -33,7 +33,7 @@ Event.init(
 export class Voter extends Model {};
 Voter.init(
     {
-        id: DataTypes.STRING,
+        id: { type: DataTypes.STRING, primaryKey: true, unique: true },
         name: DataTypes.STRING,
         user: DataTypes.STRING,
         created_at: DataTypes.DATE,
@@ -47,7 +47,7 @@ Voter.init(
 export class Voting extends Model {};
 Voting.init(
     {
-        id: DataTypes.STRING,
+        id: { type: DataTypes.STRING, primaryKey: true, unique: true },
         event_id: DataTypes.STRING,
         voter_id: DataTypes.STRING,
         picked_date: DataTypes.DATE,

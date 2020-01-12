@@ -2,9 +2,14 @@
   "name": "voting-acara",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "node .",
+    "nodemon": "nodemon -r dotenv/config --delay 1500ms -e js --watch dist .",
+    "dev": "concurrently npm:watch npm:nodemon",
+    "test": "nyc mocha"
   },
   "author": "ardhi",
   "license": "ISC",
@@ -25,12 +30,6 @@
     "source-map-support": "^0.5.13"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
     "@types/bluebird": "^3.5.28",
     "@types/body-parser": "^1.17.1",
     "@types/chai": "^4.2.3",
@@ -46,6 +45,13 @@
     "@types/sequelize": "^4.28.6",
     "chai": "^4.2.0",
     "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "faker": "^4.1.0",
     "mocha": "^6.2.1",
     "nock": "^11.4.0",
