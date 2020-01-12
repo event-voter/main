@@ -14,9 +14,11 @@
   "author": "ardhi",
   "license": "ISC",
   "dependencies": {
+    "@types/sha1": "^1.1.2",
     "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "date-and-time": "^0.12.0",
     "express": "^4.17.1",
     "jaeger-client": "^3.17.0",
     "jsonwebtoken": "^8.5.1",
@@ -27,6 +29,7 @@
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "sequelize": "^5.19.6",
+    "sha1-es": "^1.8.2",
     "source-map-support": "^0.5.13"
   },
   "devDependencies": {

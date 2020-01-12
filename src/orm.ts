@@ -22,7 +22,6 @@ Event.init(
         desc: DataTypes.STRING,
         pass: DataTypes.STRING,
         user: DataTypes.STRING,
-        created_at: DataTypes.DATE,
         status: DataTypes.INTEGER
     },
     {
@@ -61,9 +60,9 @@ Voting.init(
 );
 
 Voting.hasMany(Voter);
-Voting.hasMany(Event);
+Event.hasMany(Voting);
 Voter.belongsTo(Voting);
-Event.belongsTo(Voting);
+Voting.belongsTo(Event);
 
 export function syncDB() : Promise<Sequelize> {
     return db.sync();
