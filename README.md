@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-# event-voter
-=======
-# server
->>>>>>> d90b2615bd45a41b4fd68e2fda3ce366d727378c
+# For Development
+## Build the Typescript : 
+'npm run build' or 'npm run watch'
+## Run server : 
+'npm run nodemon'
+
